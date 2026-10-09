@@ -1,0 +1,13 @@
+{
+  "name": "patricia-lambert-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site estático Patrícia Lambert — deploy na Vercel",
+  "scripts": {
+    "build": "node scripts/generate-config.js",
+    "dev": "npx --yes serve ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

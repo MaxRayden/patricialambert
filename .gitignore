@@ -5,3 +5,7 @@ desktop.ini
 .idea/
 .vscode/
 *.swp
+.vercel
+.env
+.env.*
+!.env.example
