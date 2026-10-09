@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teste dos Sabotadores da Mente — CLUBB UPP. Mapeie os padrões que travam seu emagrecimento.">
+  <title>Teste dos Sabotadores — CLUBB UPP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    window.SITE_CONFIG = {
+      whatsappPhone: '5500000000000'
+    };
+  </script>
+</head>
+<body>
+
+  <header class="brand-header no-print">
+    <div class="page-container">
+      <div class="club-logos-row">
+        <img src="../assets/images/clubb-upp-light.jpeg" alt="CLUBB UPP" width="420" height="420" loading="eager">
+      </div>
+      <p class="brand-tagline">Reprogramação Mental &amp; Emagrecimento</p>
+      <hr class="brand-divider">
+    </div>
+  </header>
+
+  <main class="page-container page-main">
+
+    <section id="screen-welcome" class="quiz-card text-center fade-in">
+      <div style="margin-bottom: 1.25rem;">
+        <span class="badge-clubb">Bônus exclusivo CLUBB UPP 🤍</span>
+      </div>
+
+      <h1 class="serif welcome-title">Sabotadores da Mente</h1>
+      <p class="serif welcome-subtitle">O teste que revela a voz que trava seu emagrecimento</p>
+      <hr class="brand-divider">
+
+      <p class="welcome-copy">
+        Você se esforça, começa com dedicação, mas sente que sempre volta ao ponto de partida? São os seus sabotadores mentais operando no piloto automático.
+        <br><br>
+        Responda às 30 afirmações com sinceridade total para descobrir qual padrão dominante está sabotando seu corpo e sua autoimagem.
+      </p>
+
+      <div class="welcome-actions">
+        <button type="button" id="btn-start-quiz" class="btn-upp btn-upp--lg">Começar</button>
+        <span class="welcome-meta">Tempo estimado: 4 a 6 minutos + cadastro rápido</span>
+      </div>
+    </section>
+
+    <section id="screen-lead" class="quiz-card fade-in is-hidden">
+      <h2 class="serif lead-title">Antes de começar, me conta quem é você</h2>
+      <p class="lead-copy">
+        Seus dados serão enviados junto com o resultado no WhatsApp da Patrícia Lambert, no mesmo formato do diagnóstico.
+      </p>
+
+      <div class="lead-form-grid">
+        <div class="lead-field">
+          <label for="participant-name">Nome completo</label>
+          <input type="text" id="participant-name" placeholder="Como posso te chamar?" autocomplete="name">
+        </div>
+        <div class="lead-field">
+          <label for="participant-email">E-mail</label>
+          <input type="email" id="participant-email" placeholder="voce@email.com" autocomplete="email">
+        </div>
+        <div class="lead-field">
+          <label for="participant-birth">Data de nascimento</label>
+          <input type="date" id="participant-birth">
+        </div>
+        <div class="lead-field">
+          <label for="participant-sex">Sexo</label>
+          <select id="participant-sex">
+            <option value="">Selecione</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Outro">Outro</option>
+            <option value="Prefiro não informar">Prefiro não informar</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="lead-form-error" class="lead-form-error is-hidden">Preencha todos os campos para continuar.</p>
+
+      <div class="lead-actions">
+        <button type="button" id="btn-back-welcome" class="btn-outline-upp">← Voltar</button>
+        <button type="button" id="btn-continue-lead" class="btn-upp">Continuar para o teste</button>
+      </div>
+    </section>
+
+    <section id="screen-quiz" class="quiz-card fade-in is-hidden">
+      <div class="quiz-topbar">
+        <span class="badge-clubb" style="font-size: 0.8rem;">CLUBB UPP 🤍</span>
+        <span id="progress-text" class="quiz-progress-label">Pergunta 1 de 30</span>
+      </div>
+
+      <div class="progress-bar-track">
+        <div id="progress-fill" class="progress-bar-fill" style="width: 3.33%;"></div>
+      </div>
+
+      <div class="question-wrap">
+        <h2 id="question-text" class="serif question-text">Carregando afirmação...</h2>
+      </div>
+
+      <div id="options-container">
+        <button type="button" class="option-btn" data-val="0">
+          <span>0 — Nunca</span>
+          <span class="option-score-badge">0</span>
+        </button>
+        <button type="button" class="option-btn" data-val="1">
+          <span>1 — Às vezes</span>
+          <span class="option-score-badge">1</span>
+        </button>
+        <button type="button" class="option-btn" data-val="2">
+          <span>2 — Frequentemente</span>
+          <span class="option-score-badge">2</span>
+        </button>
+        <button type="button" class="option-btn" data-val="3">
+          <span>3 — Quase sempre</span>
+          <span class="option-score-badge">3</span>
+        </button>
+      </div>
+
+      <div class="quiz-nav">
+        <button type="button" id="btn-prev-question" class="btn-outline-upp">← Anterior</button>
+        <span class="quiz-hint">Selecione uma resposta para avançar</span>
+      </div>
+    </section>
+
+    <section id="screen-result" class="fade-in is-hidden">
+      <div class="quiz-card text-center result-intro">
+        <span class="badge-clubb">Seu Mapeamento Mental 🤍</span>
+        <h2 class="serif result-title">Seu Resultado dos Sabotadores</h2>
+        <p class="result-copy">
+          Conhecer a voz que te sabota é o primeiro passo para assumir o controle. Veja abaixo os sabotadores que mais interferem na sua jornada:
+        </p>
+        <hr class="brand-divider">
+      </div>
+
+      <div id="top-saboteurs-container"></div>
+
+      <div class="chart-container-custom">
+        <h3 class="serif chart-title">Panorama de Todos os Sabotadores</h3>
+        <p class="chart-subtitle">Pontuação de 0 a 9 pontos em cada perfil</p>
+        <div id="all-saboteurs-bars"></div>
+      </div>
+
+      <div class="cta-banner">
+        <span class="badge-clubb" style="margin-bottom: 0.75rem; background: var(--surface);">Reprogramação Mental 🤍</span>
+        <h3 class="serif">"Seu sabotador não pilota mais a sua vida. Quer reprogramar de verdade?"</h3>
+        <p style="color: var(--mocha-brown); font-size: 1.1rem; font-weight: 500; margin: 0;">
+          Vem pro <strong>CLUBB UPP 🤍</strong>
+        </p>
+        <a href="https://www.instagram.com/clubbupp/" target="_blank" rel="noopener noreferrer" class="cta-link">@clubbupp</a>
+
+        <p class="cta-whatsapp-copy no-print">Manda suas respostas agora pelo WhatsApp que a Patrícia recebe tudo organizado.</p>
+
+        <div class="result-actions no-print">
+          <button type="button" id="btn-send-whatsapp" class="btn-upp">Enviar minhas respostas no WhatsApp</button>
+          <button type="button" id="btn-print-pdf" class="btn-outline-upp">Imprimir / Salvar em PDF</button>
+          <button type="button" id="btn-restart-quiz" class="btn-outline-upp">Refazer o teste</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer no-print">
+    <div class="page-container">
+      <p style="margin: 0;">CLUBB UPP 🤍 @clubbupp — Reprogramação Mental para Emagrecimento</p>
+      <p style="margin: 0.75rem 0 0; font-size: 0.8rem;">
+        <a href="../index.html" style="color: inherit;">Voltar ao site da Patrícia Lambert</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
