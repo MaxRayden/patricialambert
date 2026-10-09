@@ -9,11 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
-  <script>
-    window.SITE_CONFIG = {
-      whatsappPhone: '5500000000000'
-    };
-  </script>
+  <script src="js/config.js"></script>
 </head>
 <body>
 
@@ -26,8 +22,10 @@
         <li><a href="#acoes">Comece aqui</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="consulta-consultoria/">Nutrição</a></li>
-        <li><a href="#atuacao">Atuação</a></li>
+        <li><a href="meli/">MELI</a></li>
+        <li><a href="meli-i/">MELI-I</a></li>
         <li><a href="clubb-upp/">CLUBB UPP</a></li>
+        <li><a href="#atuacao">Atuação</a></li>
         <li><a href="#teste">Teste</a></li>
         <li><a href="#redes">Redes</a></li>
       </ul>
@@ -515,17 +513,8 @@
     <img src="assets/icons/whatsapp.svg" alt="" width="28" height="28">
   </a>
 
+  <script src="js/site-utils.js"></script>
   <script src="js/site.js"></script>
   <script src="js/quiz-embed.js"></script>
-  <script>
-    (function () {
-      var phone = (window.SITE_CONFIG && window.SITE_CONFIG.whatsappPhone) || '5500000000000';
-      var digits = phone.replace(/\D/g, '');
-      var floatLink = document.getElementById('whatsapp-float-link');
-      if (floatLink) {
-        floatLink.href = 'https://wa.me/' + digits + '?text=' + encodeURIComponent('Oi Patrícia! Quero saber mais sobre seu acompanhamento.');
-      }
-    })();
-  </script>
 </body>
 </html>

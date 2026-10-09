@@ -1,11 +1,10 @@
 /**
- * Consulta & Consultoria — nav, modal e WhatsApp
+ * Consulta & Consultoria — modal de agendamento e WhatsApp
  */
 (function () {
   'use strict';
 
-  var phone =
-    (window.SITE_CONFIG && window.SITE_CONFIG.whatsappPhone) || '5500000000000';
+  var utils = window.SiteUtils;
 
   var SERVICE_LABELS = {
     consulta: 'Consulta Nutricional Individual (online)',
@@ -24,13 +23,11 @@
     return lines.join('\n');
   }
 
-  function whatsappUrl(text) {
-    return (
-      'https://wa.me/' +
-      phone.replace(/\D/g, '') +
-      '?text=' +
-      encodeURIComponent(text)
-    );
+  function openWhatsapp(text) {
+    var url = utils
+      ? utils.whatsappUrl(text)
+      : 'https://wa.me/5500000000000?text=' + encodeURIComponent(text);
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   var overlay = document.getElementById('booking-modal');
@@ -96,36 +93,12 @@
       }
       var goalEl = document.getElementById('client-goal');
       var goal = goalEl ? goalEl.value : '';
-      window.open(whatsappUrl(buildMessage(service, name, goal)), '_blank', 'noopener,noreferrer');
+      openWhatsapp(buildMessage(service, name, goal));
       closeModal();
     });
   }
 
-  var header = document.querySelector('.site-header');
-  var toggle = document.querySelector('.nav-toggle');
-  var mobileNav = document.querySelector('.mobile-nav');
-
-  if (toggle && header) {
-    toggle.addEventListener('click', function () {
-      var expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      header.classList.toggle('nav-open');
-    });
-
-    if (mobileNav) {
-      mobileNav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          toggle.setAttribute('aria-expanded', 'false');
-          header.classList.remove('nav-open');
-        });
-      });
-    }
-
-    document.addEventListener('click', function (e) {
-      if (!header.contains(e.target) && header.classList.contains('nav-open')) {
-        toggle.setAttribute('aria-expanded', 'false');
-        header.classList.remove('nav-open');
-      }
-    });
+  if (utils) {
+    utils.initLandingNav();
   }
 })();

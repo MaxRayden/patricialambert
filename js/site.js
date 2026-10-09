@@ -79,4 +79,11 @@
       }
     }
   }
+
+  const floatLink = document.getElementById('whatsapp-float-link');
+  if (floatLink && window.SiteUtils) {
+    floatLink.href = window.SiteUtils.whatsappUrl(
+      'Oi Patrícia! Quero saber mais sobre seu acompanhamento.'
+    );
+  }
 })();

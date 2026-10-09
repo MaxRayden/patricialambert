@@ -5,8 +5,12 @@
 (function () {
   'use strict';
 
-  const WHATSAPP_PHONE =
-    (window.SITE_CONFIG && window.SITE_CONFIG.whatsappPhone) || '5500000000000';
+  function whatsappPhoneDigits() {
+    if (window.SiteUtils) return window.SiteUtils.getPhoneDigits();
+    var raw =
+      (window.SITE_CONFIG && window.SITE_CONFIG.whatsappPhone) || '5500000000000';
+    return String(raw).replace(/\D/g, '');
+  }
 
   const SABOTEURS_DATA = [
     { id: 'juiz', name: 'JUIZ', comida: "Culpa após qualquer deslize, mentalidade 'tudo ou nada' ('já estraguei, então como o resto da semana').", autoimagem: 'Vê defeitos no espelho, compara o corpo com o de outras mulheres.', sabio: 'Um deslize não apaga meu progresso.' },
@@ -310,7 +314,7 @@
 
   function sendResultsToWhatsApp() {
     if (!lastSortedResults) return;
-    const phone = WHATSAPP_PHONE.replace(/\D/g, '');
+    const phone = whatsappPhoneDigits();
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(buildWhatsAppMessage())}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   }
