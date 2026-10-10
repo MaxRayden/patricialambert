@@ -252,34 +252,17 @@ strong {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
   padding: var(--space-md) var(--container-padding);
   max-width: var(--container-max);
   margin-inline: auto;
 }
 
-.nav__logo {
-  flex-shrink: 0;
-  margin-right: 0.25rem;
-  text-decoration: none;
-  color: inherit;
-}
-
 .nav__logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.05em;
   font-family: var(--font-serif);
-  font-size: clamp(0.85rem, 2.2vw, 1rem);
-  font-weight: 600;
-  color: var(--color-text);
-  letter-spacing: 0.03em;
-  line-height: 1.05;
-}
-
-.nav__logo-line {
-  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  letter-spacing: 0.08em;
 }
 
 .nav__links {
@@ -1109,21 +1092,8 @@ a.service-card:focus-visible {
     --space-2xl: 6rem;
   }
 
-  .nav {
-    max-width: min(72rem, 100%);
-    gap: var(--space-md);
-  }
-
-  .nav__logo {
-    margin-right: var(--space-sm);
-  }
-
   .nav__links {
     display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 0.65rem 1.1rem;
   }
 
   .nav__toggle {
