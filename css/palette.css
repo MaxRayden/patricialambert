@@ -1,0 +1,33 @@
+/**
+ * CLUBB UPP · Paleta oficial — assets/images/paleta.jpeg
+ * Nomes e hex conforme guia da marca.
+ */
+:root {
+  --palette-blush: #f4e9e6;
+  --palette-mocha: #4a3b35;
+  --palette-dusty-rose: #dba39a;
+  --palette-ivory: #faf6f3;
+  --palette-nude: #e8d5cc;
+  --palette-taupe: #a89588;
+  --palette-mauve: #c4a3a0;
+  --palette-espresso: #2d2420;
+  --palette-sand: #dcc9bd;
+
+  /* Semânticos (home + landings) */
+  --color-bg: var(--palette-ivory);
+  --color-text: var(--palette-mocha);
+  --color-text-secondary: var(--palette-taupe);
+  --color-accent: var(--palette-dusty-rose);
+  --color-accent-hover: var(--palette-mauve);
+  --color-accent-dark: var(--palette-mauve);
+  --color-blush: var(--palette-blush);
+  --color-sand: var(--palette-sand);
+  --color-nude: var(--palette-nude);
+  --color-mauve: var(--palette-mauve);
+  --color-espresso: var(--palette-espresso);
+  --color-surface: var(--palette-blush);
+  --color-white: var(--palette-ivory);
+  --color-cream: var(--palette-ivory);
+  --color-border: rgba(74, 59, 53, 0.14);
+  --color-on-accent: var(--palette-mocha);
+}

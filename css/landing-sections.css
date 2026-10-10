@@ -1,0 +1,20 @@
+/**
+ * Separadores leves entre seções (landings — não incluir na home).
+ */
+
+.hero + .section:not(.section--dark):not(.section--blush),
+.section:not(.section--dark):not(.section--blush):not(.hero):not(.closing):not(.compare-section):not(.carta-wrap)
+  + .section:not(.section--dark):not(.section--blush):not(.hero):not(.closing):not(.compare-section),
+.section--dark + .section:not(.section--dark):not(.carta-wrap),
+.section--blush + .section:not(.section--blush):not(.section--dark):not(.closing):not(.compare-section),
+.section:not(.carta-wrap) + .carta-wrap,
+.section--blush + .compare-section,
+.compare-section + .closing {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--palette-sand) 55%, var(--palette-nude));
+}
+
+.section:not(.section--dark) + .section--dark,
+.carta-wrap + .closing,
+.section--blush + .closing {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--palette-ivory) 20%, transparent);
+}

@@ -1,20 +1,24 @@
 /* MELI — Método Leveza Integrada (paleta Paty / CLUBB UPP) */
 
+@import url('../../css/palette.css');
+@import url('../../css/landing-sections.css');
+@import url('../../css/landing-header.css');
+
 :root {
-  --meli-bg: #faf6f3;
-  --meli-cream: #fdf7f5;
-  --meli-blush: #f4e9e6;
-  --meli-surface: #ffffff;
-  --meli-surface-warm: #f9ebe6;
-  --meli-text: #4a3b35;
-  --meli-text-muted: #7c6960;
-  --meli-accent: #dba39a;
-  --meli-accent-hover: #c87a71;
-  --meli-accent-dark: #b86b62;
-  --meli-dark: #2d2420;
-  --meli-dark-alt: #3d3028;
-  --meli-on-dark: #faf6f3;
-  --meli-border: #e8d5cc;
+  --meli-bg: var(--palette-ivory);
+  --meli-cream: var(--palette-ivory);
+  --meli-blush: var(--palette-blush);
+  --meli-surface: var(--palette-blush);
+  --meli-surface-warm: var(--palette-blush);
+  --meli-text: var(--palette-mocha);
+  --meli-text-muted: var(--palette-taupe);
+  --meli-accent: var(--palette-dusty-rose);
+  --meli-accent-hover: var(--palette-mauve);
+  --meli-accent-dark: var(--palette-mauve);
+  --meli-dark: var(--palette-espresso);
+  --meli-dark-alt: var(--palette-mocha);
+  --meli-on-dark: var(--palette-ivory);
+  --meli-border: var(--palette-nude);
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;

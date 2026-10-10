@@ -1,23 +1,25 @@
 /* Teste dos Sabotadores — CLUBB UPP */
 
+@import url('../../css/palette.css');
+
 :root {
-  --accent: #c87a71;
-  --accent-text: #8c423a;
-  --accent-contrast: #ffffff;
-  --bg: #faf6f3;
-  --surface: #ffffff;
-  --text: #4a3b35;
-  --text-muted: #7c6960;
-  --border: #e8dcd8;
+  --accent: var(--palette-dusty-rose);
+  --accent-text: var(--palette-mocha);
+  --accent-contrast: var(--palette-mocha);
+  --bg: var(--palette-ivory);
+  --surface: var(--palette-blush);
+  --text: var(--palette-mocha);
+  --text-muted: var(--palette-taupe);
+  --border: var(--palette-nude);
   --radius: 20px;
 
-  --blush-pink: #f4e9e6;
-  --warm-ivory: #faf6f3;
-  --mocha-brown: #4a3b35;
-  --taupe: #7c6960;
-  --dusty-rose: #dba39a;
-  --soft-mauve: #c4a3a0;
-  --dusty-rose-dark: #b86b62;
+  --blush-pink: var(--palette-blush);
+  --warm-ivory: var(--palette-ivory);
+  --mocha-brown: var(--palette-mocha);
+  --taupe: var(--palette-taupe);
+  --dusty-rose: var(--palette-dusty-rose);
+  --soft-mauve: var(--palette-mauve);
+  --dusty-rose-dark: var(--palette-mauve);
 }
 
 *,
@@ -34,7 +36,7 @@ body {
 
 body {
   background-color: var(--bg);
-  background-image: radial-gradient(circle at 50% 0%, #f4e9e6 0%, #faf6f3 75%);
+  background-image: radial-gradient(circle at 50% 0%, var(--palette-blush) 0%, var(--palette-ivory) 75%);
   color: var(--text);
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
@@ -198,8 +200,8 @@ h3,
 }
 
 .btn-upp {
-  background: linear-gradient(135deg, #dba39a 0%, #c4a3a0 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--palette-dusty-rose) 0%, var(--palette-mauve) 100%);
+  color: var(--palette-mocha);
   border: none;
   font-weight: 600;
   padding: 0.9rem 2rem;
@@ -218,11 +220,11 @@ h3,
 
 .btn-upp:hover,
 .btn-upp:focus-visible {
-  background: linear-gradient(135deg, #c87a71 0%, #b86b62 100%);
+  background: linear-gradient(135deg, var(--palette-mauve) 0%, var(--palette-dusty-rose) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 122, 113, 0.4);
+  box-shadow: 0 6px 20px rgba(219, 163, 154, 0.4);
   outline: none;
-  color: #ffffff;
+  color: var(--palette-mocha);
 }
 
 .btn-upp--lg {
@@ -351,7 +353,7 @@ h3,
 
 .option-btn.selected {
   border-color: var(--dusty-rose-dark);
-  background-color: #f7ebe8;
+  background-color: var(--palette-blush);
   box-shadow: 0 0 0 2px var(--dusty-rose);
   font-weight: 600;
 }
@@ -380,7 +382,7 @@ h3,
 
 .progress-bar-track {
   height: 6px;
-  background: #f0e4e0;
+  background: var(--palette-nude);
   border-radius: 9999px;
   overflow: hidden;
   width: 100%;
@@ -436,7 +438,7 @@ h3,
 
 .saboteur-card.primary-saboteur {
   border: 2px solid var(--dusty-rose);
-  background: linear-gradient(180deg, #ffffff 0%, #faf4f2 100%);
+  background: linear-gradient(180deg, var(--palette-blush) 0%, var(--palette-ivory) 100%);
 }
 
 .saboteur-badge {
@@ -478,7 +480,7 @@ h3,
 }
 
 .info-block {
-  background: #faf5f3;
+  background: var(--palette-ivory);
   border-left: 3px solid var(--dusty-rose);
   padding: 1rem 1.25rem;
   border-radius: 0 12px 12px 0;
@@ -506,7 +508,7 @@ h3,
 }
 
 .wise-quote {
-  background: linear-gradient(135deg, #f7ebe8 0%, #f4e9e6 100%);
+  background: linear-gradient(135deg, var(--palette-blush) 0%, var(--palette-sand) 100%);
   border: 1px dashed var(--soft-mauve);
   border-radius: 14px;
   padding: 1.25rem;
@@ -593,7 +595,7 @@ h3,
 }
 
 .cta-banner {
-  background: linear-gradient(135deg, #f4e9e6 0%, #ebe0dc 100%);
+  background: linear-gradient(135deg, var(--palette-blush) 0%, var(--palette-sand) 100%);
   border: 1px solid var(--soft-mauve);
   border-radius: var(--radius);
   padding: 2.5rem 1.75rem;

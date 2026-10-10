@@ -1,20 +1,8 @@
 /* Patrícia Lambert · CLUBB UPP — paleta oficial */
 
-:root {
-  --color-bg: #faf6f3;
-  --color-text: #4a3b35;
-  --color-text-secondary: #a89588;
-  --color-accent: #dba39a;
-  --color-accent-hover: #c87a71;
-  --color-accent-dark: #b86b62;
-  --color-white: #ffffff;
-  --color-blush: #f4e9e6;
-  --color-sand: #dcc9bd;
-  --color-nude: #e8d5cc;
-  --color-border: rgba(74, 59, 53, 0.14);
-  --color-espresso: #2d2420;
-  --color-mauve: #c4a3a0;
+@import url('palette.css');
 
+:root {
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 
@@ -212,8 +200,12 @@ strong {
 
 .btn--primary {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-mauve) 100%);
-  color: var(--color-white);
+  color: var(--color-on-accent);
   box-shadow: 0 4px 16px rgba(219, 163, 154, 0.35);
+}
+
+.btn--primary .btn__icon {
+  filter: none;
 }
 
 .btn--primary:hover {
@@ -260,17 +252,34 @@ strong {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-sm);
   padding: var(--space-md) var(--container-padding);
   max-width: var(--container-max);
   margin-inline: auto;
 }
 
+.nav__logo {
+  flex-shrink: 0;
+  margin-right: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav__logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05em;
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--color-accent-dark);
-  letter-spacing: 0.08em;
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+}
+
+.nav__logo-line {
+  display: block;
 }
 
 .nav__links {
@@ -347,7 +356,7 @@ strong {
 .hero-photo-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  padding: 8px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-medium);
@@ -355,17 +364,19 @@ strong {
 }
 
 .hero-photo-card__frame {
-  position: absolute;
-  inset: 8px;
   border-radius: calc(var(--radius-lg) - 8px);
   overflow: hidden;
   outline: 2px solid var(--color-bg);
+  line-height: 0;
 }
 
 .hero-photo-card__frame img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: min(70vh, 520px);
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero__content {
@@ -401,10 +412,6 @@ strong {
 .action-card:hover {
   transform: translateY(-2px);
   border-color: var(--color-accent);
-}
-
-.action-card--primary {
-  background: var(--color-blush);
 }
 
 .action-card__content {
@@ -488,21 +495,60 @@ strong {
 .services-grid {
   display: grid;
   gap: var(--space-md);
-  max-width: 900px;
+  max-width: min(100%, 68rem);
   margin-inline: auto;
 }
 
 .service-card {
   padding: var(--space-lg) var(--space-md);
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--palette-blush) 85%, var(--palette-ivory));
   border: 1px solid var(--color-nude);
   border-radius: var(--radius-md);
+}
+
+a.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+a.service-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 28px rgba(45, 36, 32, 0.08);
+  transform: translateY(-2px);
+}
+
+a.service-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.service-card__meta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.75;
+  margin: 0 0 var(--space-xs);
 }
 
 .service-card__title {
   font-family: var(--font-serif);
   font-size: 1.35rem;
   margin-bottom: var(--space-sm);
+}
+
+.service-card__cta {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: var(--space-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 .club-section {
@@ -793,7 +839,7 @@ strong {
 
 .progress-bar-track {
   height: 6px;
-  background: #f0e4e0;
+  background: var(--color-nude);
   border-radius: var(--radius-pill);
   overflow: hidden;
   width: 100%;
@@ -833,7 +879,7 @@ strong {
 
 .option-btn.selected {
   border-color: var(--color-accent-dark);
-  background: #f7ebe8;
+  background: var(--color-blush);
   box-shadow: 0 0 0 2px var(--color-accent);
   font-weight: 600;
 }
@@ -855,7 +901,7 @@ strong {
 
 .option-btn.selected .option-score-badge {
   background: var(--color-accent-dark);
-  color: var(--color-white);
+  color: var(--color-on-accent);
 }
 
 .btn-outline-upp {
@@ -905,7 +951,7 @@ strong {
 
 .saboteur-card.primary-saboteur {
   border: 2px solid var(--color-accent);
-  background: linear-gradient(180deg, #ffffff 0%, #faf4f2 100%);
+  background: linear-gradient(180deg, var(--color-blush) 0%, var(--color-bg) 100%);
 }
 
 .saboteur-badge {
@@ -921,7 +967,7 @@ strong {
 
 .saboteur-badge.rank-1 {
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-on-accent);
 }
 
 .saboteur-badge.rank-2 {
@@ -948,7 +994,7 @@ strong {
 }
 
 .info-block {
-  background: #faf5f3;
+  background: var(--color-bg);
   border-left: 3px solid var(--color-accent);
   padding: 1rem 1.25rem;
   border-radius: 0 12px 12px 0;
@@ -972,7 +1018,7 @@ strong {
 }
 
 .wise-quote {
-  background: linear-gradient(135deg, #f7ebe8 0%, var(--color-blush) 100%);
+  background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-sand) 100%);
   border: 1px dashed var(--color-mauve);
   border-radius: 14px;
   padding: 1.25rem;
@@ -1063,8 +1109,21 @@ strong {
     --space-2xl: 6rem;
   }
 
+  .nav {
+    max-width: min(72rem, 100%);
+    gap: var(--space-md);
+  }
+
+  .nav__logo {
+    margin-right: var(--space-sm);
+  }
+
   .nav__links {
     display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.1rem;
   }
 
   .nav__toggle {

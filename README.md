@@ -68,6 +68,6 @@ Arquivos de deploy: [`vercel.json`](vercel.json) (trailing slash, cache de asset
 
 ## Paleta e tipografia
 
-Tokens em [`css/site.css`](css/site.css) (`:root`): cream `#faf6f3`, mocha `#4a3b35`, dusty rose `#dba39a`, espresso `#2d2420`. Fontes: **Playfair Display** + **DM Sans** (Google Fonts).
+Guia visual: [`assets/images/paleta.jpeg`](assets/images/paleta.jpeg). Tokens canônicos em [`css/palette.css`](css/palette.css) (importado pela home e pelas landings): Soft Blush `#f4e9e6`, Mocha `#4a3b35`, Dusty Rose `#dba39a`, Warm Ivory `#faf6f3`, Nude `#e8d5cc`, Taupe `#a89588`, Soft Mauve `#c4a3a0`, Espresso `#2d2420`, Warm Sand `#dcc9bd`.
 
-Landings replicam a mesma paleta em seus `css/styles.css`.
+Fontes: **Playfair Display** + **DM Sans** (Google Fonts). Separadores entre seções nas landings: [`css/landing-sections.css`](css/landing-sections.css).

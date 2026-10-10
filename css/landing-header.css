@@ -1,0 +1,108 @@
+/**
+ * Header duplo nas landings: produto (topo da página) + Patrícia Lambert (home).
+ */
+
+.site-header:has(.header-identity) {
+  height: auto;
+  min-height: var(--header-h, 4.25rem);
+  padding-block: 0.45rem;
+}
+
+.header-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.header-home {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--palette-taupe);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.header-home:hover {
+  color: var(--palette-dusty-rose);
+}
+
+.header-product {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.header-product .brand__icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.header-product .brand__text {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: none;
+  opacity: 1;
+}
+
+.header-product .brand__text span {
+  display: block;
+}
+
+.header-product--consulta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.08rem;
+}
+
+.header-product__title {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.header-product__tag {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--palette-taupe);
+}
+
+.header-product:hover .brand__text,
+.header-product:hover .header-product__title {
+  color: var(--palette-dusty-rose);
+}
+
+@media (min-width: 960px) {
+  .header-identity {
+    gap: 0.15rem;
+  }
+
+  .header-home {
+    font-size: 0.68rem;
+  }
+
+  .header-product .brand__text {
+    font-size: 0.95rem;
+  }
+
+  .header-product__title {
+    font-size: 1rem;
+  }
+}

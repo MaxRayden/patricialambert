@@ -1,19 +1,23 @@
 /* CLUBB UPP — landing (paleta alinhada ao site Paty) */
 
+@import url('../../css/palette.css');
+@import url('../../css/landing-sections.css');
+@import url('../../css/landing-header.css');
+
 :root {
-  --clubb-bg: #faf6f3;
-  --clubb-bg-band: #f4e9e6;
-  --clubb-surface: #ffffff;
-  --clubb-surface-warm: #f9ebe6;
-  --clubb-text: #4a3b35;
-  --clubb-text-muted: #7c6960;
-  --clubb-accent: #dba39a;
-  --clubb-accent-hover: #c87a71;
-  --clubb-dark: #2d2420;
-  --clubb-dark-alt: #443632;
-  --clubb-cream: #fdf7f5;
-  --clubb-border: #e8d5cc;
-  --clubb-on-dark: #faf6f3;
+  --clubb-bg: var(--palette-ivory);
+  --clubb-bg-band: var(--palette-blush);
+  --clubb-surface: var(--palette-blush);
+  --clubb-surface-warm: var(--palette-blush);
+  --clubb-text: var(--palette-mocha);
+  --clubb-text-muted: var(--palette-taupe);
+  --clubb-accent: var(--palette-dusty-rose);
+  --clubb-accent-hover: var(--palette-mauve);
+  --clubb-dark: var(--palette-espresso);
+  --clubb-dark-alt: var(--palette-mocha);
+  --clubb-cream: var(--palette-ivory);
+  --clubb-border: var(--palette-nude);
+  --clubb-on-dark: var(--palette-ivory);
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
@@ -402,7 +406,7 @@ button {
   text-align: center;
   border: 2px dashed rgba(219, 163, 154, 0.45);
   border-radius: var(--radius-card);
-  background: rgba(255, 255, 255, 0.5);
+  background: color-mix(in srgb, var(--palette-ivory) 55%, transparent);
   color: var(--clubb-text-muted);
   font-size: 0.95rem;
 }

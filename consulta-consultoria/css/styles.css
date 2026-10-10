@@ -1,18 +1,10 @@
 /* Consulta & Consultoria — paleta Patrícia Lambert / CLUBB UPP */
 
-:root {
-  --color-bg: #faf6f3;
-  --color-text: #4a3b35;
-  --color-text-secondary: #7c6960;
-  --color-accent: #dba39a;
-  --color-accent-hover: #c87a71;
-  --color-accent-dark: #b86b62;
-  --color-white: #ffffff;
-  --color-blush: #f4e9e6;
-  --color-border: rgba(74, 59, 53, 0.14);
-  --color-espresso: #2d2420;
-  --color-cream: #fdf7f5;
+@import url('../../css/palette.css');
+@import url('../../css/landing-sections.css');
+@import url('../../css/landing-header.css');
 
+:root {
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 
@@ -207,7 +199,7 @@ textarea {
 }
 
 .btn--dark:hover {
-  background: #3d3028;
+  background: var(--palette-mocha);
 }
 
 .btn--block {
